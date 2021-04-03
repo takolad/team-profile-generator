@@ -17,8 +17,8 @@ describe('Employee class', () => {
 
     it("should throw an error when no name is entered", () => {
         const empName = "";
-        const empId = 0;
-        const empEmail = "janed@fakemail.com";
+        const empId = 41;
+        const empEmail = "johnd@fakemail.com";
 
         const emp = () => new Employee(empName, empId, empEmail);
         const err = new Error ("A name must be entered.");
@@ -27,9 +27,9 @@ describe('Employee class', () => {
     })
     
     it("should throw an error when a negative id is entered", () => {
-        const empName = "Rick Donles";
+        const empName = "John Doe";
         const empId = -8;
-        const empEmail = "rickd@fakemail.com";
+        const empEmail = "johnd@fakemail.com";
 
         const emp = () => new Employee(empName, empId, empEmail);
         const err = new Error ("A non-negative id number is required.");
@@ -38,9 +38,9 @@ describe('Employee class', () => {
     })
 
     it("should throw an error when an invalid email is entered", () => {
-        const empName = "Zack Unfaire";
+        const empName = "John Doe";
         const empId = 1;
-        const empEmail = "zackrulz.com";
+        const empEmail = "johndoe.com";
 
         const emp = () => new Employee(empName, empId, empEmail);
         const err = new Error ("Invalid email format entered.")
