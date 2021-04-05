@@ -10,7 +10,7 @@ function init () {
     // console.log(manager);
     // console.log(employeeArray);
     // const squad = 
-    // team.generateProfile(squad);
+    // team.generateProfile(ourTeam);
 }
 
 init();
