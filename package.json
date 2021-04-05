@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/takolad/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/takolad/team-profile-generator#readme"
+  "homepage": "https://github.com/takolad/team-profile-generator#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
 }

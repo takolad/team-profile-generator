@@ -1,16 +1,16 @@
-const inquirer = require('inquirer');
 const fs = require('fs');
-const promptTemplate = require('template.js');
+const team = require('./lib/team');
 
 function init () {
 
-inquirer
-    .prompt()
-    .then((response) => {
-
-    })
-    .catch(err => console.log(err));
-
+    const ourTeam = team.getManager();
+    // const employeeArray = [];
+    // employeeArray.push(team.getEmployee());
+    // console.log("Testing...");
+    // console.log(manager);
+    // console.log(employeeArray);
+    // const squad = 
+    // team.generateProfile(squad);
 }
 
 init();

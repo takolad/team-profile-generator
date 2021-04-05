@@ -3,7 +3,13 @@ const managerPrompt = [
     {
         type: 'input',
         message: "Enter the team manager's name: ",
-        name: 'name'
+        name: 'name',
+        validate: function (value) {
+            if(value) {
+                return true;
+            }
+            return 'Please enter the manager name';
+        }
     },
     {
         type: 'input',
@@ -18,15 +24,15 @@ const managerPrompt = [
     {
         type: 'input',
         message: "Enter the team manager's office number: ",
-        name: 'name'
+        name: 'office'
     },
 ]
 
 const addEmpPrompt = [
     {
         type: 'list',
-        message: "Add additional Employee to team:",
-        choice: ['Engineer', 'Intern', 'Complete Team'],
+        message: "Add an additional employee to the team:",
+        choices: ['Engineer', 'Intern', 'Complete Team'],
         name: 'employee'
     }
 ]
@@ -76,3 +82,8 @@ const internPrompt = [
         name: 'school'
     },
 ]
+
+module.exports = { managerPrompt, 
+                    addEmpPrompt, 
+                    engineerPrompt, 
+                    internPrompt }
