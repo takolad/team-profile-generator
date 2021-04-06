@@ -12,7 +12,7 @@ const managerPrompt = [
         }
     },
     {
-        type: 'input',
+        type: 'number',
         message: "Enter the team manager's employee ID: ",
         name: 'id',
     },
@@ -22,27 +22,21 @@ const managerPrompt = [
         name: 'email'
     },
     {
-        type: 'input',
+        type: 'number',
         message: "Enter the team manager's office number: ",
         name: 'office'
 
     },
+]
+
+const employeePrompt = [
     {
         type: 'list',
         message: "Add an additional employee to the team:",
         choices: ['Engineer', 'Intern', 'Complete Team'],
-        name: 'additional'
+        name: 'additional',
     },
 ]
-
-// const addEmpPrompt = [
-//     {
-//         type: 'list',
-//         message: "Add an additional employee to the team:",
-//         choices: ['Engineer', 'Intern', 'Complete Team'],
-//         name: 'employee'
-//     }
-// ]
 
 const engineerPrompt = [
     {
@@ -51,7 +45,7 @@ const engineerPrompt = [
         name: 'name'
     },
     {
-        type: 'input',
+        type: 'number',
         message: "Enter the engineers's employee ID: ",
         name: 'id'
     },
@@ -65,12 +59,6 @@ const engineerPrompt = [
         message: "Enter the engineers's GitHub username: ",
         name: 'github'
     },
-    {
-        type: 'list',
-        message: "Add an additional employee to the team:",
-        choices: ['Engineer', 'Intern', 'Complete Team'],
-        name: 'additional'
-    },
 ]
 
 const internPrompt = [
@@ -80,7 +68,7 @@ const internPrompt = [
         name: 'name'
     },
     {
-        type: 'input',
+        type: 'number',
         message: "Enter the intern's employee ID: ",
         name: 'id'
     },
@@ -94,15 +82,9 @@ const internPrompt = [
         message: "Enter the interns's school: ",
         name: 'school'
     },
-    {
-        type: 'list',
-        message: "Add an additional employee to the team:",
-        choices: ['Engineer', 'Intern', 'Complete Team'],
-        name: 'additional'
-    },
 ]
 
-module.exports = { managerPrompt, 
-                    // addEmpPrompt, 
+module.exports = { managerPrompt,
+                    employeePrompt,
                     engineerPrompt, 
                     internPrompt }

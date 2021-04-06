@@ -1,31 +1,5 @@
 const team = require('../lib/team');
 
-// const employees = team.empArray;
-// const squad = '';
-
-// employees.forEach(build);
-
-// function buildHtml(arr) {
-//     arr.forEach((value, idx) => {
-//         const index = idx;
-//         empName = value.name;
-//         empId = value.id;
-//         empEmail = value.email;
-//         // github, school, office
-//         if (value.office) {
-//             uniqueString = value.office;
-//         } else if (value.github) {
-//             uniqueString = value.github
-//         } else if (value.school) {
-//             uniqueString = value.school;
-//         }
-        
-//         squad += newEmployeeString
-//     }).then()
-    
-//     return html;
-// }
-
 const newEmployeeString = (answers) =>
 `<div class='card' id='emp${answers.index}'>
     <div class='card-content'>

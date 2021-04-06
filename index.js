@@ -2,51 +2,53 @@ const fs = require('fs');
 const team = require('./lib/team');
 
 const empArray = [];
-
+var nextEmp = '';
 
 
 function init () {
 
     team.getManager().then((answers) => {
         try {
-            // get the string for manager
-            const managerString = team.employeeHtml(answers);
-            empArray.push(managerString);
-            if (answers.additional !== 'Complete Team') {
-                empType = answers.additional;
-            }
+            // adds the manager information to the array
+            empArray.push(team.employeeHtml(answers));
         } catch (error) {
             console.log(error);
-        } 
-        // then ask for additional employee
+        }
     })
     .then(() => {
-            switch (empType) {
+        try {
+            nextEmp = team.getEmployee();
+        } catch (error) {
+            console.log(error);
+        }
+    })
+    .then(() => {
+            switch (nextEmp) {
                 case 'Engineer':
-                            team.getEngineer().then((answers) => {
-                                try {
-                                    const engineerString = team.employeeHtml(answers);
-                                    empArray.push(engineerString);
-                                } catch (error) {
-                                    console.log(error);
-                                }
-                            });
-                            break;
-                        case 'Intern':
-                            team.getIntern().then((answers) => {
-                                try {
-                                    const internString = team.employeeHtml(answers);
-                                    empArray.push(internString);
-                                } catch (error) {
-                                    console.log(error);
-                                }
-                            })
-                            break;
-                        default:
-                            return 0;
+                    team.getEngineer().then((answers) => {
+                        try {
+                            empArray.push(team.employeeHtml(answers));
+                            nextEmp = answers.additional;
+                        } catch (error) {
+                            console.log(error);
+                        }
+                    });
+                    break;
+                case 'Intern':
+                    team.getIntern().then((answers) => {
+                        try {
+                            empArray.push(team.employeeHtml(answers));
+                            nextEmp = answers.additional;
+                        } catch (error) {
+                            console.log(error);
+                        }
+                    })
+                    break;
+                case 'Complete Team':
+                    console.log("it's fucking done");
             };
     })
-    .then(() => { console.log(empArray); })
+    // .then(() => { console.log(empArray); })
 };
 
 init(); // towinit (getit?(i'm having a bad time))
