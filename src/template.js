@@ -14,7 +14,7 @@ const managerPrompt = [
     {
         type: 'input',
         message: "Enter the team manager's employee ID: ",
-        name: 'id'
+        name: 'id',
     },
     {
         type: 'input',
@@ -25,17 +25,24 @@ const managerPrompt = [
         type: 'input',
         message: "Enter the team manager's office number: ",
         name: 'office'
-    },
-]
 
-const addEmpPrompt = [
+    },
     {
         type: 'list',
         message: "Add an additional employee to the team:",
         choices: ['Engineer', 'Intern', 'Complete Team'],
-        name: 'employee'
-    }
+        name: 'additional'
+    },
 ]
+
+// const addEmpPrompt = [
+//     {
+//         type: 'list',
+//         message: "Add an additional employee to the team:",
+//         choices: ['Engineer', 'Intern', 'Complete Team'],
+//         name: 'employee'
+//     }
+// ]
 
 const engineerPrompt = [
     {
@@ -57,6 +64,12 @@ const engineerPrompt = [
         type: 'input',
         message: "Enter the engineers's GitHub username: ",
         name: 'github'
+    },
+    {
+        type: 'list',
+        message: "Add an additional employee to the team:",
+        choices: ['Engineer', 'Intern', 'Complete Team'],
+        name: 'additional'
     },
 ]
 
@@ -81,9 +94,15 @@ const internPrompt = [
         message: "Enter the interns's school: ",
         name: 'school'
     },
+    {
+        type: 'list',
+        message: "Add an additional employee to the team:",
+        choices: ['Engineer', 'Intern', 'Complete Team'],
+        name: 'additional'
+    },
 ]
 
 module.exports = { managerPrompt, 
-                    addEmpPrompt, 
+                    // addEmpPrompt, 
                     engineerPrompt, 
                     internPrompt }
